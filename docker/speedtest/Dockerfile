@@ -10,6 +10,6 @@ ENV INFLUXDB_DB="speedtest" \
 
 COPY . .
 
-RUN npm install -g speed-test json
+RUN npm install -g git://github.com/Tigger2014/speed-test.git json
 
 CMD [ "npm", "start" ]

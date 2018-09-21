@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 2,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -50,12 +50,10 @@
       "mappingType": 1,
       "mappingTypes": [
         {
-          "$$hashKey": "object:279",
           "name": "value to text",
           "value": 1
         },
         {
-          "$$hashKey": "object:280",
           "name": "range to text",
           "value": 2
         }
@@ -83,7 +81,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:187",
+          "$$hashKey": "object:1102",
           "alias": "Download",
           "groupBy": [
             {
@@ -126,7 +124,6 @@
       "valueFontSize": "50%",
       "valueMaps": [
         {
-          "$$hashKey": "object:282",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -165,12 +162,10 @@
       "mappingType": 1,
       "mappingTypes": [
         {
-          "$$hashKey": "object:279",
           "name": "value to text",
           "value": 1
         },
         {
-          "$$hashKey": "object:280",
           "name": "range to text",
           "value": 2
         }
@@ -198,7 +193,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:187",
           "alias": "Upload",
           "groupBy": [
             {
@@ -241,7 +235,6 @@
       "valueFontSize": "50%",
       "valueMaps": [
         {
-          "$$hashKey": "object:282",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -280,12 +273,10 @@
       "mappingType": 1,
       "mappingTypes": [
         {
-          "$$hashKey": "object:279",
           "name": "value to text",
           "value": 1
         },
         {
-          "$$hashKey": "object:280",
           "name": "range to text",
           "value": 2
         }
@@ -313,7 +304,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:187",
           "alias": "Ping",
           "groupBy": [
             {
@@ -356,7 +346,6 @@
       "valueFontSize": "150%",
       "valueMaps": [
         {
-          "$$hashKey": "object:282",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -372,10 +361,135 @@
       "datasource": "InfluxDB",
       "fill": 1,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 24,
         "x": 0,
         "y": 8
+      },
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 3,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:440",
+          "alias": "$tag_host",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "upload",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Upload",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:324",
+          "format": "Mbits",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:325",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "InfluxDB",
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 18
       },
       "id": 4,
       "legend": {
@@ -402,8 +516,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:547",
-          "alias": "Download",
+          "$$hashKey": "object:524",
+          "alias": "$tag_host",
           "groupBy": [
             {
               "params": [
@@ -413,55 +527,23 @@
             },
             {
               "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
                 "null"
               ],
               "type": "fill"
             }
           ],
+          "measurement": "download",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"download\" WHERE $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"download\" WHERE $timeFilter GROUP BY time($__interval), \"host\" fill(null)",
           "rawQuery": true,
           "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        },
-        {
-          "$$hashKey": "object:548",
-          "alias": "Upload",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"upload\" WHERE $timeFilter GROUP BY time($interval) fill(null)",
-          "rawQuery": true,
-          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
@@ -483,7 +565,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Upload / Download",
+      "title": "Download",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -532,7 +614,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 26
       },
       "id": 2,
       "legend": {
@@ -559,8 +641,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:256",
-          "alias": "Ping",
+          "alias": "$tag_host",
           "groupBy": [
             {
               "params": [
@@ -570,15 +651,22 @@
             },
             {
               "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
                 "null"
               ],
               "type": "fill"
             }
           ],
+          "measurement": "ping",
           "orderByTime": "ASC",
           "policy": "default",
           "query": "SELECT mean(\"value\") FROM \"ping\" WHERE $timeFilter GROUP BY time($interval) fill(null)",
-          "rawQuery": true,
+          "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -618,7 +706,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:318",
           "format": "ms",
           "label": null,
           "logBase": 1,
@@ -627,7 +714,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:319",
           "format": "Mbits",
           "label": null,
           "logBase": 1,
@@ -642,6 +728,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -649,7 +736,7 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -680,5 +767,5 @@
   "timezone": "",
   "title": "Speedtest results",
   "uid": "0A6hxROiz",
-  "version": 1
+  "version": 4
 }
