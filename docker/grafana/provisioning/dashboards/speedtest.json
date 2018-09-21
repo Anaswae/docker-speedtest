@@ -81,7 +81,6 @@
       "tableColumn": "",
       "targets": [
         {
-          "$$hashKey": "object:1102",
           "alias": "Download",
           "groupBy": [
             {
@@ -359,7 +358,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB",
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
         "h": 10,
         "w": 24,
@@ -390,7 +389,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:440",
+          "$$hashKey": "object:679",
           "alias": "$tag_host",
           "groupBy": [
             {
@@ -455,7 +454,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:324",
           "format": "Mbits",
           "label": null,
           "logBase": 1,
@@ -464,7 +462,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:325",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -484,7 +481,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB",
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
         "h": 8,
         "w": 24,
@@ -507,8 +504,8 @@
       "links": [],
       "nullPointMode": "connected",
       "percentage": false,
-      "pointradius": 5,
-      "points": false,
+      "pointradius": 3,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -516,7 +513,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:524",
           "alias": "$tag_host",
           "groupBy": [
             {
@@ -609,7 +605,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB",
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
         "h": 8,
         "w": 24,
@@ -632,8 +628,8 @@
       "links": [],
       "nullPointMode": "connected",
       "percentage": false,
-      "pointradius": 5,
-      "points": false,
+      "pointradius": 3,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -641,6 +637,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:835",
           "alias": "$tag_host",
           "groupBy": [
             {
