@@ -11,7 +11,7 @@ while :; do
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "download,host=${HOST} value=${DOWNLOAD}"
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "upload,host=${HOST} value=${UPLOAD}"
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "ping,host=${HOST} value=${PING}"
-	echo "sleeping before nexttest"
+	echo "sleeping before next test"
 	sleep 10
 	echo "[Info][$(date)] Starting speedtest... to CFL"
 	JSON=$(speed-test -j -v -s CFL)
